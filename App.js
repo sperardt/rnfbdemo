@@ -9,19 +9,8 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import firebase from '@react-native-firebase/app';
-import analytics from '@react-native-firebase/analytics';
 import auth from '@react-native-firebase/auth';
-import crashlytics from '@react-native-firebase/crashlytics';
 import database from '@react-native-firebase/database';
-import dynamic_links from '@react-native-firebase/dynamic-links';
-import firestore from '@react-native-firebase/firestore';
-import functions from '@react-native-firebase/functions';
-import in_app_messaging from '@react-native-firebase/in-app-messaging';
-import iid from '@react-native-firebase/iid';
-import messaging from '@react-native-firebase/messaging';
-import ml from '@react-native-firebase/ml';
-import perf from '@react-native-firebase/perf';
-import remote_config from '@react-native-firebase/remote-config';
 import storage from '@react-native-firebase/storage';
 
 const instructions = Platform.select({
@@ -40,19 +29,8 @@ export default class App extends Component {
         <Text style={styles.instructions}>{instructions}</Text>
         <Text>The following modules are installed natively and working:</Text>
         {firebase.apps.length && <Text style={styles.module}>app()</Text>}
-        {analytics().native && <Text style={styles.module}>analytics()</Text>}
         {auth().native && <Text style={styles.module}>auth()</Text>}
-        {crashlytics().native && <Text style={styles.module}>crashlytics()</Text>}
         {database().native && <Text style={styles.module}>database()</Text>}
-        {dynamic_links().native && <Text style={styles.module}>dynamic-links()</Text>}
-        {firestore().native && <Text style={styles.module}>firestore()</Text>}
-        {functions().native && <Text style={styles.module}>functions()</Text>}
-        {iid().native && <Text style={styles.module}>instance-id()</Text>}
-        {in_app_messaging().native && <Text style={styles.module}>in-app-messaging()</Text>}
-        {messaging().native && <Text style={styles.module}>messaging()</Text>}
-        {ml().native && <Text style={styles.module}>ml()</Text>}
-        {perf().native && <Text style={styles.module}>perf()</Text>}
-        {remote_config().native && <Text style={styles.module}>remote-config()</Text>}
         {storage().native && <Text style={styles.module}>storage()</Text>}
       </View>
     );
